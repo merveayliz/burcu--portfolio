@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burcu Güneş Efil | Material Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;800&family=Space+Grotesk:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="intro-screen">
+        <div class="intro-name" id="intro-text">
+            <span class="gradient-name">BURCU GÜNEŞ EFİL</span>
+        </div>
+        <div class="underline" id="intro-line"></div>
+    </div>
+
+    <main id="main-card">
+        <div class="card-left">
+            <div class="profile-wrapper">
+                <img src="burcu.jpg" alt="Burcu Güneş Efil" class="profile-img">
+                <h2 class="job-title">MALZEME MÜHENDİSİ</h2>
+                <p class="university">Eskişehir Teknik Üniversitesi</p>
+            </div>
+        </div>
+
+        <div class="card-right">
+            <h1 class="hero-title">Engineering <span>Materials</span></h1>
+            <p class="about-text">
+               Eskişehir'den Brüksel'de  uzanan bir mühendislik yolculuğu. VitrA ve Çimsa tecrübeleriyle harmanlanmış, mikroskopi ve malzeme karakterizasyonu odaklı profesyonel bir bakış açısı.
+            </p>
+
+            <div id="content-area"></div>
+
+            <div class="btn-group">
+                <button class="nav-btn" onclick="updateUI('cert')">SERTİFİKALAR</button>
+                <button class="nav-btn" onclick="updateUI('thesis')">TEZ / PROJE</button>
+                <button class="nav-btn" id="contact-bt" onclick="updateUI('contact')">İLETİŞİM</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="status-bar">
+         DESIGNED BY <a href="https://linkedin.com/in/ayliz-azaklı-74579b318" target="_blank" class="dev-link">AYLİZ DEV</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

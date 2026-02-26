@@ -1,0 +1,316 @@
+:root {
+    --earth: #A67C52;
+    --glass-blue: #57eaf5;
+    --bg: #1b1919;
+    --glass-card: rgba(13, 1, 54, 0.459);
+    --transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+
+body { 
+    background: var(--bg); 
+    color: #fff; 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    overflow: hidden; 
+}
+
+/* --- GİRİŞ ANİMASYONU --- */
+#intro-screen {
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-name {
+    font-size: clamp(1.5rem, 6vw, 4rem);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    white-space: nowrap;
+    z-index: 10000;
+}
+
+/* Renkli İsim Düzeltildi */
+.gradient-name {
+    background: linear-gradient(90deg, var(--earth), var(--glass-blue));
+    -webkit-background-clip: text;
+    background-clip: text; /* Bazı tarayıcılar için ekledik */
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.3));
+}
+
+.underline {
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--earth), var(--glass-blue));
+    margin-top: 15px;
+    transition: width 1.5s ease-in-out;
+}
+
+/* --- ANA KART --- */
+#main-card {
+    position: relative;
+    width: 90%;
+    max-width: 1100px;
+    min-height: 85vh;
+    margin: 7vh auto;
+    background: var(--glass-card);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    opacity: 0;
+    transform: scale(0.9) translateY(50px);
+    transition: var(--transition);
+    z-index: 10;
+}
+
+/* Sol Taraf - Fotoğrafın Merkeze Oturması */
+.card-left {
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.profile-wrapper {
+    text-align: center;
+    /* İsim sol üste kaydığında bu alanın merkezde kalması için */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-img {
+    width: 220px;
+    height: 280px;
+    border-radius: 30px;
+    object-fit: cover;
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+    margin-bottom: 25px;
+    transition: transform 0.5s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.03);
+    border-color: var(--glass-blue);
+}
+
+.job-title { font-size: 1.1rem; letter-spacing: 4px; color: var(--glass-blue); margin-bottom: 8px; font-weight: 700; }
+.university { font-size: 0.8rem; opacity: 0.5; letter-spacing: 1px; }
+
+/* Sağ Taraf */
+.card-right { padding: 60px; display: flex; flex-direction: column; justify-content: center; }
+.hero-title { font-size: 2.8rem; margin-bottom: 20px; font-family: 'Space Grotesk'; font-weight: 700; }
+.hero-title span { color: var(--glass-blue); }
+.about-text { opacity: 0.7; line-height: 1.8; margin-bottom: 40px; font-size: 1.05rem; }
+
+/* Buton Grubu ve Hoverlar */
+.btn-group { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+
+.nav-btn {
+    padding: 14px 28px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.nav-btn:hover { 
+    background: var(--glass-blue); 
+    color: #000; 
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+    transform: translateY(-3px);
+}
+
+/* İçerik Kutusu İçindeki Linkler İçin Hover */
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease !important;
+}
+
+.contact-link:hover {
+    transform: translateX(10px);
+    background: rgba(173, 177, 172, 0.658) !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    text-shadow: 0 0 5px rgb(0, 0, 0);
+}
+
+#content-area {
+    margin: 20px 0;
+    padding: 25px;
+    background: rgba(97, 33, 134, 0.719);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    min-height: 120px;
+    display: none;
+    animation: slideUp 0.5s forwards;
+}
+
+/* Status Bar & Ayliz Dev Link */
+#status-bar {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.4);
+    pointer-events: none;
+}
+
+.dev-link {
+    color: var(--glass-blue);
+    text-decoration: none;
+    font-weight: 800;
+    transition: 0.3s;
+    pointer-events: auto;
+}
+
+.dev-link:hover { text-shadow: 0 0 10px var(--glass-blue); color: #fff; }
+
+@keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+/* --- MOBİL CİHAZLAR İÇİN ÖZEL AYARLAR (TELEFON) --- */
+@media (max-width: 768px) {
+    body {
+        overflow-y: auto; /* Telefondan aşağı kayabilsin */
+        background-attachment: fixed;
+    }
+
+    #main-card {
+        grid-template-columns: 1fr; /* Yan yana değil alt alta */
+        width: 92%; /* Ekrana yapışmasın diye yanlardan boşluk */
+        margin: 80px auto 40px auto; /* Başlık animasyonu için üstten yer açtık */
+        height: auto;
+        min-height: auto;
+        padding: 20px; /* İçerideki o boğucu boşluğu azalttık */
+        border-radius: 30px;
+    }
+
+    /* Giriş Animasyonu Telefon Ayarı */
+    .intro-name {
+        font-size: 1.8rem; /* Mobilde taşmasın */
+    }
+
+    /* Sol Taraf (Fotoğraf Kısmı) */
+    .card-left {
+        padding: 20px 0;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Altına çizgi çektik */
+    }
+
+    .profile-img {
+        width: 160px; /* Mobilde biraz daha kibar dursun */
+        height: 200px;
+        margin-bottom: 15px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .job-title {
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+    }
+
+    /* Sağ Taraf (Yazı ve Butonlar) */
+    .card-right {
+        padding: 30px 10px; /* Yanlardaki boşluğu sıfırladık taşma olmasın */
+        text-align: center; /* Telefondan her şey ortalı daha profesyonel durur */
+    }
+
+    .hero-title {
+        font-size: 1.8rem; /* Başlık devasa olup ekranı bozmasın */
+        margin-bottom: 15px;
+    }
+
+    .about-text {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 25px;
+    }
+
+    /* Buton Grubu - Telefondan basması kolay olsun */
+    .btn-group {
+        display: grid;
+        grid-template-columns: 1fr; /* Butonlar alt alta sıralansın */
+        gap: 10px;
+        width: 100%;
+    }
+
+    .nav-btn {
+        width: 100%; /* Butonlar ekranı tam kaplasın (App tarzı) */
+        padding: 15px;
+        font-size: 0.85rem;
+    }
+
+    /* İçerik Kutusu (Sertifika vb.) */
+    #content-area {
+        padding: 20px;
+        margin: 20px 0;
+        text-align: left; /* Listeler soldan başlasın */
+    }
+  .contact-link {
+        font-size: 0.8rem;
+        padding: 15px;
+    }
+
+    /* Senin İmzan */
+    #status-bar {
+        position: relative; /* Sabit değil kartın altına gelsin ki içeriği kapatmasın */
+        padding: 20px 0;
+        bottom: 0;
+        font-size: 0.6rem;
+    }
+    /* İletişim butonuna özel ve içerik alanı düzeltmesi */
+#contact-btn:active {
+    transform: scale(0.95); /* Basıldığında küçük bir geri bildirim */
+}
+
+/* Mobilde içerik alanının sağa yapışmasını önleyen kesin çözüm */
+@media (max-width: 768px) {
+    #content-area {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 15px; /* İç boşluğu biraz daralttık ki içeriğe yer kalsın */
+        box-sizing: border-box;
+    }
+
+    /* İletişim linklerinin (Mail/Linkedin) kutu içinde taşmasını engelleme */
+    .contact-link {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start; /* Sola yaklaştırdık */
+        align-items: center;
+        overflow: hidden; /* Uzun mailler taşmasın */
+        text-overflow: ellipsis; 
+        white-space: nowrap;
+        font-size: 0.75rem !important; /* Mobilde yazıyı biraz küçülttük */
+        padding: 12px !important;
+    }
+
+    /* İletişim ikonlarını sabitleyelim */
+    .contact-link i {
+        min-width: 20px;
+        margin-right: 8px;
+    }
+}
+}
