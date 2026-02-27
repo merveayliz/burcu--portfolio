@@ -15,7 +15,7 @@ body {
     overflow: hidden; 
 }
 
-/* --- GİRİŞ ANİMASYONU --- */
+
 #intro-screen {
     position: fixed;
     inset: 0;
@@ -35,11 +35,10 @@ body {
     z-index: 10000;
 }
 
-/* Renkli İsim Düzeltildi */
 .gradient-name {
     background: linear-gradient(90deg, var(--earth), var(--glass-blue));
     -webkit-background-clip: text;
-    background-clip: text; /* Bazı tarayıcılar için ekledik */
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
     filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.3));
@@ -73,7 +72,7 @@ body {
     z-index: 10;
 }
 
-/* Sol Taraf - Fotoğrafın Merkeze Oturması */
+
 .card-left {
     padding: 40px;
     display: flex;
@@ -84,7 +83,6 @@ body {
 
 .profile-wrapper {
     text-align: center;
-    /* İsim sol üste kaydığında bu alanın merkezde kalması için */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -106,17 +104,52 @@ body {
     border-color: var(--glass-blue);
 }
 
-.job-title { font-size: 1.1rem; letter-spacing: 4px; color: var(--glass-blue); margin-bottom: 8px; font-weight: 700; }
-.university { font-size: 0.8rem; opacity: 0.5; letter-spacing: 1px; }
+.job-title { 
+    font-size: 1.1rem; 
+    letter-spacing: 4px; 
+    color: var(--glass-blue); 
+    margin-bottom: 8px; 
+    font-weight: 700; 
+}
 
-/* Sağ Taraf */
-.card-right { padding: 60px; display: flex; flex-direction: column; justify-content: center; }
-.hero-title { font-size: 2.8rem; margin-bottom: 20px; font-family: 'Space Grotesk'; font-weight: 700; }
-.hero-title span { color: var(--glass-blue); }
-.about-text { opacity: 0.7; line-height: 1.8; margin-bottom: 40px; font-size: 1.05rem; }
+.university { 
+    font-size: 0.8rem; 
+    opacity: 0.5; 
+    letter-spacing: 1px; 
+}
 
-/* Buton Grubu ve Hoverlar */
-.btn-group { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+.card-right { 
+    padding: 60px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+}
+
+.hero-title { 
+    font-size: 2.8rem; 
+    margin-bottom: 20px; 
+    font-family: 'Space Grotesk'; 
+    font-weight: 700; 
+}
+
+.hero-title span { 
+    color: var(--glass-blue); 
+}
+
+.about-text { 
+    opacity: 0.7;
+    line-height: 1.8; 
+    margin-bottom: 40px; 
+    font-size: 1.05rem; 
+}
+
+
+.btn-group { 
+    display: flex; 
+    gap: 12px; 
+    flex-wrap: wrap; 
+    margin-top: 20px; 
+}
 
 .nav-btn {
     padding: 14px 28px;
@@ -139,7 +172,6 @@ body {
     transform: translateY(-3px);
 }
 
-/* İçerik Kutusu İçindeki Linkler İçin Hover */
 .contact-link {
     display: flex;
     align-items: center;
@@ -165,7 +197,7 @@ body {
     animation: slideUp 0.5s forwards;
 }
 
-/* Status Bar & Ayliz Dev Link */
+
 #status-bar {
     position: fixed;
     bottom: 20px;
@@ -191,34 +223,34 @@ body {
 /* --- MOBİL CİHAZLAR İÇİN ÖZEL AYARLAR (TELEFON) --- */
 @media (max-width: 768px) {
     body {
-        overflow-y: auto; /* Telefondan aşağı kayabilsin */
+        overflow-y: auto; 
         background-attachment: fixed;
     }
 
     #main-card {
-        grid-template-columns: 1fr; /* Yan yana değil alt alta */
-        width: 92%; /* Ekrana yapışmasın diye yanlardan boşluk */
-        margin: 80px auto 40px auto; /* Başlık animasyonu için üstten yer açtık */
+        grid-template-columns: 1fr; 
+        width: 92%; 
+        margin: 80px auto 40px auto; 
         height: auto;
         min-height: auto;
-        padding: 20px; /* İçerideki o boğucu boşluğu azalttık */
+        padding: 20px; 
         border-radius: 30px;
     }
 
-    /* Giriş Animasyonu Telefon Ayarı */
+   
     .intro-name {
-        font-size: 1.8rem; /* Mobilde taşmasın */
+        font-size: 1.8rem; 
     }
 
-    /* Sol Taraf (Fotoğraf Kısmı) */
+    
     .card-left {
         padding: 20px 0;
         border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Altına çizgi çektik */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .profile-img {
-        width: 160px; /* Mobilde biraz daha kibar dursun */
+        width: 160px; 
         height: 200px;
         margin-bottom: 15px;
         margin-left: auto;
@@ -230,14 +262,14 @@ body {
         letter-spacing: 2px;
     }
 
-    /* Sağ Taraf (Yazı ve Butonlar) */
+
     .card-right {
-        padding: 30px 10px; /* Yanlardaki boşluğu sıfırladık taşma olmasın */
-        text-align: center; /* Telefondan her şey ortalı daha profesyonel durur */
+        padding: 30px 10px; 
+        text-align: center; 
     }
 
     .hero-title {
-        font-size: 1.8rem; /* Başlık devasa olup ekranı bozmasın */
+        font-size: 1.8rem; 
         margin-bottom: 15px;
     }
 
@@ -247,70 +279,71 @@ body {
         margin-bottom: 25px;
     }
 
-    /* Buton Grubu - Telefondan basması kolay olsun */
+ 
     .btn-group {
         display: grid;
-        grid-template-columns: 1fr; /* Butonlar alt alta sıralansın */
+        grid-template-columns: 1fr; 
         gap: 10px;
         width: 100%;
     }
 
     .nav-btn {
-        width: 100%; /* Butonlar ekranı tam kaplasın (App tarzı) */
+        width: 100%; 
         padding: 15px;
         font-size: 0.85rem;
     }
 
-    /* İçerik Kutusu (Sertifika vb.) */
+ 
     #content-area {
         padding: 20px;
         margin: 20px 0;
-        text-align: left; /* Listeler soldan başlasın */
+        text-align: left; 
     }
   .contact-link {
         font-size: 0.8rem;
         padding: 15px;
     }
 
-    /* Senin İmzan */
+    
     #status-bar {
-        position: relative; /* Sabit değil kartın altına gelsin ki içeriği kapatmasın */
+        position: relative;
         padding: 20px 0;
         bottom: 0;
         font-size: 0.6rem;
     }
-    /* İletişim butonuna özel ve içerik alanı düzeltmesi */
+ 
 #contact-btn:active {
-    transform: scale(0.95); /* Basıldığında küçük bir geri bildirim */
+    transform: scale(0.95); 
 }
 
-/* Mobilde içerik alanının sağa yapışmasını önleyen kesin çözüm */
+
 @media (max-width: 768px) {
     #content-area {
         width: 100%;
         margin-left: 0;
         margin-right: 0;
-        padding: 15px; /* İç boşluğu biraz daralttık ki içeriğe yer kalsın */
+        padding: 15px; 
         box-sizing: border-box;
     }
 
-    /* İletişim linklerinin (Mail/Linkedin) kutu içinde taşmasını engelleme */
+    
     .contact-link {
         width: 100%;
         display: flex;
-        justify-content: flex-start; /* Sola yaklaştırdık */
+        justify-content: flex-start; 
         align-items: center;
-        overflow: hidden; /* Uzun mailler taşmasın */
+        overflow: hidden;
         text-overflow: ellipsis; 
         white-space: nowrap;
-        font-size: 0.75rem !important; /* Mobilde yazıyı biraz küçülttük */
+        font-size: 0.75rem !important; 
         padding: 12px !important;
     }
 
-    /* İletişim ikonlarını sabitleyelim */
+   
     .contact-link i {
         min-width: 20px;
         margin-right: 8px;
     }
 }
+
 }
