@@ -34,7 +34,7 @@ window.onload = () => {
 
     setTimeout(() => {
         text.style.transition = "1.5s cubic-bezier(0.16, 1, 0.3, 1)";
-        // Merkezin sol üstüne, fotoğrafın tam hizasına kaydırıyoruz
+       
         text.style.transform = "translate(-28vw, -44vh) scale(0.35)"; 
         line.style.opacity = "0";
         
@@ -52,4 +52,5 @@ function updateUI(type) {
     const area = document.getElementById('content-area');
     area.style.display = "block";
     area.innerHTML = infoData[type];
+
 }
