@@ -6,7 +6,12 @@
     --transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    outline: none; 
+}
 
 body { 
     background: var(--bg); 
@@ -14,7 +19,6 @@ body {
     font-family: 'Plus Jakarta Sans', sans-serif; 
     overflow: hidden; 
 }
-
 
 #intro-screen {
     position: fixed;
@@ -52,7 +56,6 @@ body {
     transition: width 1.5s ease-in-out;
 }
 
-/* --- ANA KART --- */
 #main-card {
     position: relative;
     width: 90%;
@@ -71,7 +74,6 @@ body {
     transition: var(--transition);
     z-index: 10;
 }
-
 
 .card-left {
     padding: 40px;
